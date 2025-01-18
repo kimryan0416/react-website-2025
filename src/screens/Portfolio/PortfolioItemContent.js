@@ -4,7 +4,8 @@ import {
 	Image,
 	Date,
 } from "../../components";
-import BlogBlock, { parseRawData } from '../Blog/BlogBlock';
+
+// import BlogBlock, { parseRawData } from '../Blog/BlogBlock';
 
 function PortfolioItemContent(props) {
 
@@ -30,15 +31,6 @@ function PortfolioItemContent(props) {
 
 	// Dates
 	if (dates && dates.length > 0) {
-		/*
-		let d = dates.split('\n');
-	 	if (d.length > 0) {
-	 		headerTable.push({
-				key: "Dates",
-				value: <>{d.map((date,i)=><p key={`${id}_dates_${i}`}>{date}</p>)}</>
-			});
-		}
-		*/
 		let d = dates.map((date_period,date_period_index)=>{
 			console.log(date_period);
 			const dts = (date_period.dates.length === 2)
@@ -108,7 +100,7 @@ function PortfolioItemContent(props) {
 		});
 	}
 
-	const parsedContent = parseRawData(content);
+	//const parsedContent = parseRawData(content);
 
 	return (
 		<div className="PortfolioContent">
@@ -137,19 +129,14 @@ function PortfolioItemContent(props) {
 				</div>
 			</div>
 			<Divider space={24} />
+			{/*}
 			<div className="PortfolioMain">
-				{/*}
-				<h4><strong>Description</strong></h4>
-				<Divider space={8} />
-				<p>The Easier VR Assets is a side project aimed to replicate the functionality of Oculus's OVRGrabber and OVRGrabbable scripts, which are provided in The "Oculus Integration" package on Unity.</p>
-				<Divider space={8} />
-				<p>Created in response to the general user-unfriendly nature of the default Oculus Integration package, this package attempts to reduce time for prototyping by having pre-set settings and code to allow for grabbing, locomotion, and any other events attached to each button input on the Oculus Quest and Quest 2 controllers.</p>
-				{*/}
 				{parsedContent.map((block,index)=>{
 					return <BlogBlock key={`${block.id}`} block={block} index={index} />
 				})}
 				{props.children}
 			</div>
+			{*/}
 		</div>
 	);
 }

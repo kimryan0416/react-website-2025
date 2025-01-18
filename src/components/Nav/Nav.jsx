@@ -8,7 +8,6 @@ import {
 	indexIcon,
 	portfolioIcon,
 	downloadIcon,
-	blogIcon,
 	menu,
 } from '../../assets';
 
@@ -16,7 +15,6 @@ import {
 	resume 
 } from "../../downloads";
 
-import Image from '../Image/Image';
 import './Nav.css';
 
 const Nav = () => {
@@ -37,9 +35,6 @@ const Nav = () => {
 		  break;
 		case "portfolio":
 		  extraClasses.portfolio = "CurrentLink";
-		  break;
-		case "blog":
-		  extraClasses.blog = "CurrentLink";
 		  break;
 		default:
 		  break;

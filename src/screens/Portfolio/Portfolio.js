@@ -25,12 +25,11 @@ import {
 
 import PortfolioItem from './PortfolioItem';
 import PortfolioDisplay from './PortfolioDisplay';
+*/
 
 import projects from "./Projects";
-
 const oneplace = projects.work.filter(p=>p.key==="oneplace")[0];
 const tucanfitness = projects.work.filter(p=>p.key==="tucanfitness")[0];
-*/
 
 
 const Portfolio = (props) => {
@@ -66,9 +65,15 @@ const Portfolio = (props) => {
 
 	return (
 		<Routes>
+			<Route path="/research" element={<p>Research</p>} />
 			<Route path="/work" element={<p>Work</p>} />
 			<Route path="/projects" element={<p>Projects</p>} />
-			<Route path="/research" element={<p>Research</p>} />
+			<Route exact path="/oneplace"
+				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
+			/>
+			<Route exact path="/tucanfitness"
+				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{tucanfitness.content}</PortfolioDisplay>}
+			/>
 			<Route path="/" element={<PortfolioHome />} />
 		</Routes>
 	);
@@ -117,7 +122,9 @@ const PortfolioHome = (props) => {
 					<p className="h7">Thanks to the various work experiences and projects, I've amassed a collection of tools and artifacts to help structure my development process in UX-heavy projects. I've made them available at the link below, for anybody curious!</p>
 					<Divider space={16} />
 					<ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing"><Button>UX Design Resources</Button></ExtURL>
-					{/*}
+					<Divider space={16} />
+					<p className="h7"><strong>Related experiences:</strong></p>
+					<Divider space={8} />
 					<Link to="/portfolio/oneplace">
 						<div className="PortfolioMiniItem">
 							<Image width={32} height={32} src={oneplace.thumbnail} alt="" />
@@ -132,7 +139,6 @@ const PortfolioHome = (props) => {
 							<p className="h8">{tucanfitness.title}</p>
 						</div>
 					</Link>
-					{*/}
 				</div>
 			</div>
 		</>
