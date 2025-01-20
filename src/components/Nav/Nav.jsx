@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useMobile, useOutsideClick } from '../../hooks';
+//import { useMobile } from '../../hooks';
 
 import Profile from'./Profile';
 import NavLink from './NavLink';
@@ -21,13 +21,12 @@ import './Nav.css';
 const Nav = () => {
 
 	const [ open, setOpen ] = useState(false);
-	const [ location, setLocation ] = useState(window.location.href.split("#")[1].split("/")[1]);
-	const HandleClickOutside = () => { setOpen(false); }
+	const [ location, setLocation ] = useState(window.location.href.split("/")[1]);
+	//const isMobile = useMobile();
 
 	const extraClasses = {
 		index:"",
 		portfolio:"",
-		blog:"",
 	}
 	
 	switch(location) {
@@ -52,7 +51,7 @@ const Nav = () => {
 				<Profile />
 				<div className="NavLinks">
 					<div className='NavLinksWrapper'>
-						<NavLink to='/' cName={extraClasses.index} desc="Why, hello there! Intro & Skill Set" callback={()=>{HandleLinkClick('')}}>
+						<NavLink to='' cName={extraClasses.index} desc="Why, hello there! Intro & Skill Set" callback={()=>{HandleLinkClick('')}}>
 							<img src={indexIcon} alt="" className="NavIcon" />
 							<span>Profile</span>
 						</NavLink>

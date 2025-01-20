@@ -150,14 +150,9 @@
 
 
 .AppHeader.Mobile {
-  width: 240px;
-  left: -240px;
-  position: fixed;
+  width: 150px;
 }
-  .AppHeader.Mobile.Open {
-    width: 100%;
-    left: 0px;
-  }
+
 .AppNav.Mobile {
   box-shadow: 2px 0px 10px 5px rgba(0,0,0,0.2);
 }
