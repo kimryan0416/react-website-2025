@@ -1,0 +1,146 @@
+.Blog {
+	width: 100%;
+}
+.BlogWrapper {
+	width: 100%;
+	height: auto;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+	.BlogContent {
+		flex-shrink: 1;
+		flex-grow: 0;
+		flex-basis: 100%;
+		position: relative;
+	}
+		.BlogContent p {
+			line-height: 1.5em;
+		}
+			.BlogHomeItem {
+				margin-bottom: 48px;
+			}
+
+	.BlogHistory {
+		flex-basis: 240px;
+		flex-shrink: 0;
+		border-left: 1px solid rgba(230,230,230);
+		margin-left:  16px;
+		padding-left: 16px;
+	}
+		.BlogHistory ul {
+			list-style: none;
+			padding-left: 0;
+			font-size: 0.7em;
+		}
+
+.blogHeaderNavigation {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.blogHistoryCurrentPost {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.visibleMeta, .blogBlock {
+	margin-bottom: 24px;
+}
+.visibleMeta {
+	padding-bottom: 16px;
+	border-bottom: 1px solid rgb(230,230,230);
+}
+.blogBlock h2, .blogBlock h3, .blogBlock h4 {
+	padding-top: 16px;
+}
+.blogBlock figure {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	width: 90%;
+}
+.blogBlock img {
+	width: 100%;
+	border:  1px solid rgb(235,235,235);
+}
+.blogBlock figcaption {
+	font-size: 0.8em;
+	margin-top: 4px;
+	font-style: italic;
+}
+.blogBlock pre {
+	white-space: pre-wrap;
+	overflow-x:  auto;
+	font-size:  0.8em;
+    background-color: rgb(235,235,235);
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+}
+.blogBlock code { 
+    background: rgb(235,235,235); 
+    padding: 1px 5px 1px 5px;
+    border:  1px solid rgba(220,220,220, 0.7);
+}
+.blogBlock pre code {
+	border:  none;
+}
+.blogButtonLink {
+	margin-left: 8px;
+}
+.blogBlock blockquote {
+	border-left: 4px solid rgb(230,230,230);
+	padding-left: 16px;
+	line-height: 1.5em;
+	font-style: italic;
+}
+.blogBlock blockquote.callout {
+	border: none;
+	padding: 16px;
+	background-color: rgb(230,230,230);
+	font-size: initial;
+}
+
+.blogBlock .blogColumnList {
+	display:flex;
+	flex-direction:row;
+	column-gap:32px;
+	flex-wrap:nowrap;
+}
+.blogBlock .blogColumnList .blogColumn {
+	flex-grow: 1;
+    flex-basis: 0;
+    max-width: 50%;
+}
+
+.blogBlock .blogBlockChildren {
+	padding-left: 24px;
+	box-sizing: border-box;
+}
+
+.blogBlock .blogBlockChild {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.blogError {
+	color: red;
+}
+
+.Mobile .blogColumnList {
+	flex-direction: column;
+}
+	.Mobile .blogColumnList .blogColumn {
+		max-width: 100%;
+
+	}

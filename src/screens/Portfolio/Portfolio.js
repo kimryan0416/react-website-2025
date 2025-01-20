@@ -8,13 +8,13 @@ import {
 	Link,
 } from "react-router-dom";
 
-import "./Portfolio.css";
-
 import { 
 	Divider, 
 	Image, 
 	Button,
 	ExtURL,
+	Date,
+	ScrollToTop,
 	WithRouter
 } from "../../components";
 
@@ -22,15 +22,11 @@ import {
 import {
 	useMobile
 } from '../../hooks';
-
-import PortfolioItem from './PortfolioItem';
 import PortfolioDisplay from './PortfolioDisplay';
 */
 
-import projects from "./Projects";
-const oneplace = projects.work.filter(p=>p.key==="oneplace")[0];
-const tucanfitness = projects.work.filter(p=>p.key==="tucanfitness")[0];
-
+import projects_dict from "./Projects";
+import "./Portfolio.css";
 
 const Portfolio = (props) => {
 
@@ -64,23 +60,34 @@ const Portfolio = (props) => {
 	*/
 
 	return (
+		<>
+		<ScrollToTop />
 		<Routes>
-			<Route path="/research" element={<p>Research</p>} />
-			<Route path="/work" element={<p>Work</p>} />
-			<Route path="/projects" element={<p>Projects</p>} />
-			<Route exact path="/oneplace"
-				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
-			/>
-			<Route exact path="/tucanfitness"
-				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{tucanfitness.content}</PortfolioDisplay>}
-			/>
+			<Route path="/research"	element={<PortfolioPage page="Research"><Research /></PortfolioPage>} />
+			<Route path="/work"		element={<PortfolioPage page="Work Experience"><Work /></PortfolioPage>} />
+			<Route path="/projects" element={<PortfolioPage page="Projects"><Projects /></PortfolioPage>} />
+
+			{projects_dict.all.map(p=>{
+				return (
+					<Route 
+						path={`/${p.url}`}
+						element={<PortfolioItemContent header={p.header} content={p.content} />}
+					/>
+				)
+			})}
+
 			<Route path="/" element={<PortfolioHome />} />
 		</Routes>
+		</>
 	);
 
 }
 
 const PortfolioHome = (props) => {
+	
+	const oneplace = projects_dict.work.filter(p=>p.key==="oneplace")[0];
+	const tucanfitness = projects_dict.work.filter(p=>p.key==="tucanfitness")[0];
+
 	return (
 		<>
 			<h1>Portfolio</h1>
@@ -142,6 +149,208 @@ const PortfolioHome = (props) => {
 				</div>
 			</div>
 		</>
+	);
+}
+
+const PortfolioPage = (props) => {
+	return (
+		<>
+			<div className="PortfolioHeader">
+				<div className="PortfolioHeaderLinks">
+					<h6><Link to="/portfolio">&#8678; Back to Portfolio</Link></h6>
+					<div className="PortfolioHeaderOtherLinks">
+						<h6>{props.page==="Research"
+							? <span className="PortfolioCurrentOtherLink">Research</span>
+							: <Link to="/portfolio/research">Research</Link>
+						}</h6>
+						<h6>{props.page==="Work Experience"
+							? <span className="PortfolioCurrentOtherLink">Work</span>
+							: <Link to="/portfolio/work">Work</Link>
+						}</h6>
+						<h6>{props.page==="Projects"
+							? <span className="PortfolioCurrentOtherLink">Projects</span>
+							: <Link to="/portfolio/projects">Projects</Link>
+						}</h6>				
+					</div>
+				</div>
+				<h2>{props.page}</h2>
+			</div>
+			<Divider space={32} />
+			{props.children}
+		</>
+	);
+}
+
+const PortfolioItem = (props) => {
+	const data = props.data;
+	const thumbnailStyle = (data.thumbnailStyle != null) ? data.thumbnailStyle : null;
+	const thumbnailImageStyle = (data.thumbnailImageStyle != null) ? data.thumbnailImageStyle : null;
+	return (
+		<Link to={props.linkTo}>
+			<div className="PortfolioItem">
+				<Image 
+					width={160} 
+					height={160} 
+					cName="PortfolioItemImageWrapper" 
+					src={data.thumbnail} 
+					alt="" 
+					style={thumbnailStyle}
+					imageStyle={thumbnailImageStyle}
+				/>
+				<Divider space={8} />
+				<p className="h7"><strong>{data.title}</strong></p>
+				<p className="linkSuggestion">Click to read more</p>
+			</div>
+		</Link>
+	);
+}
+
+const Research = () => {
+	return (
+		<div className="PortfolioItems">
+			{projects_dict.research.map((p,i)=>{
+				return <PortfolioItem key={`research_${i}`} data={p} linkTo={`/portfolio/${p.url}`} />
+			})}
+		</div>
+	);
+}
+
+const Work = () => {
+	return (
+		<>
+			<p>Particular experiences working in universities, startups, and companies. I've worked in <strong>research internships</strong>, <strong>contract positions</strong>, and <strong>startup companies</strong>.</p>
+			<Divider space={24} />
+			<div className="PortfolioItems">
+				{projects_dict.work.map((p,i)=>{
+					return <PortfolioItem key={`work_${i}`} data={p} linkTo={`/portfolio/${p.url}`}/>
+				})}
+			</div>
+		</>
+	);
+}
+
+const Projects = () => {
+	return (
+		<>
+			{projects_dict.projects.map((p,i)=>{
+				return (
+					<>
+						<h4>{p.type}</h4>
+						{p.description}
+						<Divider space={24} />
+						<div key={`projects_${i}`} className="PortfolioItems">
+							{p.items.map((p2,i2)=>{
+								return <PortfolioItem key={`projects_${i}_${i2}`} data={p2} linkTo={`/portfolio/${p2.url}`} />
+							})}
+						</div>
+						<Divider space={24} />
+					</>
+				)
+			})}
+		</>
+	);
+}
+
+const PortfolioItemContent = (props) => {
+	
+	const { 
+		id,
+		title,
+		icon_url,
+		description,
+		status,
+		dates,
+		external_links,
+		platforms,
+		skills,
+	} = props.header;
+	
+	// Dates
+	let dates_content = null;
+	if (dates && dates.length > 0) {
+		dates_content = dates.map((date_period,date_period_index)=>{
+			const dts = (date_period.dates.length === 2)
+				? <>
+						{ (typeof date_period.dates[0] === "object")
+							? <Date top={date_period.dates[0].year} bottom={date_period.dates[0].day} _width={60} />
+							: <p>{date_period.dates[0]}</p>
+						}
+						<Divider horizontal space={8} />
+						<p>-</p>
+						<Divider horizontal space={8} />
+						{
+							(typeof date_period.dates[1] === "object")
+								? <Date top={date_period.dates[1].year} bottom={date_period.dates[1].day} _width={60} /> 
+								: <p>{date_period.dates[1]}</p>
+						}
+					</>
+				: <Date top={date_period.dates[0].year} bottom={date_period.dates[0].day} _width={60} />
+			return (
+				<div key={date_period_index} className='DatePeriodContainer'>
+					{
+						date_period.header != null &&
+						<p><strong>{date_period.header}:</strong></p>
+					}
+					<div className={(date_period.header != null)?'DateContainer':'DateContainer'}>{dts}</div>
+					<Divider space={16} />
+				</div>
+			)
+		});
+	}
+
+	// External Links
+	let external_links_content = null;
+	if (external_links) {
+		let el = external_links.reduce((accumulator,l,i)=>{
+			if (l.text && l.text.length > 0 && l.url && l.url != null) {
+				accumulator.push(<p><ExtURL key={`${id}_external-link_${i}`} href={l.url}>{l.text}</ExtURL></p>)
+			}
+			return accumulator;
+		},[]);
+		if (el.length > 0) external_links_content = el
+	}
+
+
+	// Platforms
+	let platforms_content = null;
+	if (platforms && platforms.length > 0) {
+		platforms_content = <div><p><strong>Platforms:</strong></p><ul>{platforms.map((p,i)=><li key={`${id}_platform_${i}`}>{p}</li>)}</ul><Divider space={16} /></div>
+	}
+
+	// Skills & Topics
+	let skills_content = null;
+	if (skills && skills.length > 0) {
+		skills_content = <div><p><strong>Skills:</strong></p><ul>{skills.map((s,i)=><li key={`${id}_skill_${i}`}>{s}</li>)}</ul></div>
+	}
+
+	return (
+		<div className='PortfolioDisplay'>
+			<div className="PortfolioContent">
+				<div className="PortfolioContentHeader">
+					<div className='PortfolioContentHeaderImage'>
+						<Image src={icon_url} width={150} height={150} alt="" round cName="PortfolioThumbnail" />
+						<PortfolioStatus status={status} />
+					</div>
+					<div className='PortfolioContentHeaderMain'>
+						<h3>{title}</h3>
+						<Divider space={8} />
+						<p><i>{description}</i></p>
+						{external_links_content}	
+						<Divider space={16} />
+						{dates_content}
+						{platforms_content}
+						{skills_content}
+					</div>
+				</div>
+							
+				<Divider space={24} />
+				
+				<div className="PortfolioMain">
+					{props.content}
+					{props.children}
+				</div>
+			</div>
+		</div>
 	);
 }
 
@@ -219,5 +428,18 @@ const PortfolioPage = (props) => {
 	);
 }
 */
+
+const PortfolioStatus = (props) => {
+	switch(props.status) {
+		case 'Ongoing':
+			return <p className="PortfolioStatus Ongoing">Ongoing</p>;
+		case 'On-Hold':
+			return <p className="PortfolioStatus OnHold">On-Hold</p>;
+		case 'Completed':
+			return <p className="PortfolioStatus Completed">Completed</p>;
+		default:
+			return null;
+	}
+}
 
 export default WithRouter(Portfolio);

@@ -5,7 +5,8 @@ import {
 	Date,
 } from "../../components";
 
-// import BlogBlock, { parseRawData } from '../Blog/BlogBlock';
+import BlogBlock, { parseRawData } from './BlogBlock';
+import './Blog.css';
 
 function PortfolioItemContent(props) {
 
@@ -100,7 +101,7 @@ function PortfolioItemContent(props) {
 		});
 	}
 
-	//const parsedContent = parseRawData(content);
+	const parsedContent = parseRawData(content);
 
 	return (
 		<div className="PortfolioContent">
@@ -129,14 +130,14 @@ function PortfolioItemContent(props) {
 				</div>
 			</div>
 			<Divider space={24} />
-			{/*}
+			
 			<div className="PortfolioMain">
 				{parsedContent.map((block,index)=>{
 					return <BlogBlock key={`${block.id}`} block={block} index={index} />
 				})}
 				{props.children}
 			</div>
-			{*/}
+			
 		</div>
 	);
 }

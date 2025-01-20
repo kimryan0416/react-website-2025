@@ -5,7 +5,7 @@ import {
   Route,
 } from 'react-router-dom';
 
-import { Nav } from "./components";
+import { Nav, ScrollToTop } from "./components";
 import {
   Home,
   Portfolio,
@@ -47,11 +47,12 @@ const App = () => {
   */
  return (
   <Router>
+    <ScrollToTop />
     <div className="App">
       <Nav />
       <main>
         <Routes>
-          <Route  path="/portfolio"  element={<Portfolio />}  />
+          <Route  path="/portfolio/*"  element={<Portfolio />}  />
           <Route  path="/"  element={<Home />} />
         </Routes>
       </main>

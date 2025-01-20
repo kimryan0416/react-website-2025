@@ -12,7 +12,8 @@ import {
 } from '../../assets';
 
 import { 
-	resume 
+	resume,
+	cv
 } from "../../downloads";
 
 import './Nav.css';
@@ -62,6 +63,10 @@ const Nav = () => {
 						<NavLink to={resume} cName='DownloadLink' desc="Download my resume in PDF form." useA={true}>
 							<img src={downloadIcon} alt="" className="NavIcon" />
 							<span>Resume <span className="h8">(57 kB)</span></span>
+						</NavLink>
+						<NavLink to={cv} cName='DownloadLink' desc="Download my CV in PDF form." useA={true}>
+							<img src={downloadIcon} alt="" className="NavIcon" />
+							<span>CV <span className="h8">(185 kB)</span></span>
 						</NavLink>
 					</div>
 				</div>

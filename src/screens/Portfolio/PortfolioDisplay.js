@@ -3,11 +3,11 @@ import {
 	Divider, 
 	Button,
 } from "../../components";
-import { useMobile } from '../../hooks/';
+//import { useMobile } from '../../hooks/';
 
 const PortfolioDisplay = (props) => {
 	const [ enlargened, setEnlargened ] = useState(true);
-	const isMobile = useMobile();
+	//const isMobile = useMobile();
 	const toggleEnlarge = _ => { setEnlargened(e=>!e); }
 
 	const enlargedPanelClass = (enlargened)
@@ -17,6 +17,14 @@ const PortfolioDisplay = (props) => {
 		? 'Smaller panel'
 		: 'Enlarge panel';
 
+	return (
+		<div className='PortfolioDisplay'>
+				{props.children}
+
+		</div>
+	);
+
+	/*
 	return (
 		<div className={(isMobile)?`PortfolioDisplay ${enlargedPanelClass} Mobile`:`PortfolioDisplay ${enlargedPanelClass}`}>
 			<div className="PortfolioDisplayCover" onClick={props.goBack}></div>
@@ -35,6 +43,7 @@ const PortfolioDisplay = (props) => {
 			</div>
 		</div>
 	);
+	*/
 }
 
 export default PortfolioDisplay;

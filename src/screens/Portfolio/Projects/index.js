@@ -82,7 +82,27 @@ const projects = {
 		LivestreamsData,
 		ServiceSearchData,
 	],
-	education:[]
+	all:[
+		CSGY6613Project,
+		ECornellData,
+		EasierVRAssetsData,
+		EasierXRAssetsData,
+		EmbarkmentData,
+		ICHDData,
+		LivestreamsData,
+		MoLData,
+		MIMOData,
+		OnePlaceData,
+		OrbitData,
+		PentatonicData,
+		SMPData,
+		ServiceSearchData,
+		TosteData,
+		TucanFitnessData,
+		UMichInternData,
+		VRKeyboardData,
+		VerisimilitudeData,
+	]
 }
 
 export default projects;

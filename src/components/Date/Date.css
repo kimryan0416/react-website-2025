@@ -9,7 +9,7 @@ div.Date {
 	align-items: stretch;
 	flex-wrap: nowrap;
 	width: min-content;
-	min-width: 64px;
+	min-width: 80px;
 }
 div.Date p {
 	margin: 0px;

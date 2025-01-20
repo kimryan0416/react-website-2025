@@ -151,13 +151,7 @@
 }
 
 .PortfolioDisplay {
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	padding: 48px;
+	height: 100%;
 	box-sizing: border-box;
 
 	transition-property: padding;
@@ -286,6 +280,9 @@
 }
 .PortfolioContent .PortfolioStatus {
 	width: max-content;
+	margin:auto;
+	margin-top:-8px;
+	text-align:center;
 	padding: 8px 16px 8px 16px;
 	border-radius: 8px;
 	font-size: 0.8em;
@@ -296,7 +293,6 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	grid-row-gap: 2px;
-	font-size: 0.8em;
 	margin-bottom: 8px;
 }
 	.PortfolioContent .DatePeriodContainer:last-child {
@@ -404,6 +400,29 @@
 }
 .PortfolioContent .PortfolioContentColumn .PortfolioContentImage {
 	margin: 0;
+}
+
+.PortfolioContent figure {
+	margin-left:auto;
+	margin-right:auto;
+	width: 90%;
+	max-width:800px;
+}
+.PortfolioContent figure img {
+	width:100%;
+	border:  1px solid rgb(235,235,235);
+}
+.PortfolioContent figure figcaption {
+	font-size: 0.8em;
+	margin-top: 4px;
+	font-style: italic;
+}
+
+.PortfolioContent blockquote.callout {
+	border: none;
+	padding: 16px;
+	background-color: rgb(230,230,230);
+	font-size: initial;
 }
 
 @media only screen and (max-width: 900px) {

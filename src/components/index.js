@@ -4,6 +4,8 @@ import Divider from "./Divider/Divider";
 import Date from './Date/Date';
 import Button from "./Button/Button";
 import ExtURL from "./ExtURL/ExtURL";
+import VideoEmbed from './Video_Embed/Video_Embed';
+import ScrollToTop from './ScrollToTop/ScrollToTop';
 import WithRouter from "./WithRouter/WithRouter";
 
 export {
@@ -13,5 +15,7 @@ export {
 	Date,
 	Button,
 	ExtURL,
+	VideoEmbed,
+	ScrollToTop,
 	WithRouter,
 }

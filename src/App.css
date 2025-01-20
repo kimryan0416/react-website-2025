@@ -89,7 +89,7 @@ main {
   flex-wrap: nowrap;
 
   max-width: 800px;
-  padding-bottom: 32px;
+  padding: 48px;
 }
 
 .App.Mobile {
