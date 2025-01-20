@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.ec9d6b0b.css",
-    "main.js": "/static/js/main.93b12104.js",
+    "main.js": "/static/js/main.37570cea.js",
     "static/js/488.7a876c9d.chunk.js": "/static/js/488.7a876c9d.chunk.js",
     "static/media/Siggraph2023_PrePrint.pdf": "/static/media/Siggraph2023_PrePrint.c191e368fe54fa636458.pdf",
     "static/media/SIGSIM_Pads_24-StreetSim-AuthorVer.pdf": "/static/media/SIGSIM_Pads_24-StreetSim-AuthorVer.b4bf28ae80359583c0f4.pdf",
+    "static/media/thumbnail.png": "/static/media/thumbnail.7b013ef929d56a02cc7c.png",
     "static/media/turrent_bullet_concept.gif": "/static/media/turrent_bullet_concept.da5e032d740e909b857c.gif",
     "static/media/VRKeyboard.pdf": "/static/media/VRKeyboard.a4d5176c35f78dd5fa9b.pdf",
     "static/media/paper_prototype.jpg": "/static/media/paper_prototype.37b6e18be58dc8764b7f.jpg",
@@ -20,7 +21,6 @@
     "static/media/teamPhoto.png": "/static/media/teamPhoto.0c4344520031e53ae722.png",
     "static/media/TucanFitnessCreateRace.png": "/static/media/TucanFitnessCreateRace.e6866164ffb86561b0b9.png",
     "static/media/vrKeyboards-report.png": "/static/media/vrKeyboards-report.38bf03156ecd0e3590a6.png",
-    "static/media/thumbnail.png": "/static/media/thumbnail.7b013ef929d56a02cc7c.png",
     "static/media/TucanFitnessUISmall.png": "/static/media/TucanFitnessUISmall.afb0e7beb2ebea8f1e16.png",
     "static/media/thumbnail.jpg": "/static/media/thumbnail.bb0b2a459fb1bfba5303.jpg",
     "static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.pdf": "/static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b496c9ac691d22.pdf",
@@ -89,11 +89,11 @@
     "static/media/indexIcon.svg": "/static/media/indexIcon.499da9304a8196f4a7dca143c226af9c.svg",
     "static/media/pythonIcon.svg": "/static/media/pythonIcon.a7c436806ad16fb69c473ccc3e22e66f.svg",
     "main.ec9d6b0b.css.map": "/static/css/main.ec9d6b0b.css.map",
-    "main.93b12104.js.map": "/static/js/main.93b12104.js.map",
+    "main.37570cea.js.map": "/static/js/main.37570cea.js.map",
     "488.7a876c9d.chunk.js.map": "/static/js/488.7a876c9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec9d6b0b.css",
-    "static/js/main.93b12104.js"
+    "static/js/main.37570cea.js"
   ]
 }
