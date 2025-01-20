@@ -1,13 +1,11 @@
-/*
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-*/
+// Package Imports
 import { 
 	Routes,
 	Route,
 	Link,
 } from "react-router-dom";
 
+// Components, Hooks, Projects, and CSS
 import { 
 	Divider, 
 	Image, 
@@ -17,48 +15,12 @@ import {
 	ScrollToTop,
 	WithRouter
 } from "../../components";
-
-/*
-import {
-	useMobile
-} from '../../hooks';
-import PortfolioDisplay from './PortfolioDisplay';
-*/
-
+import { useMobile } from '../../hooks';
 import projects_dict from "./Projects";
 import "./Portfolio.css";
 
-const Portfolio = (props) => {
-
-	/*
-	const [ project, setProject ] = useState(null);
-
-	const handleItemClick = (newProject) => {
-		const to = (newProject === project) ? null : newProject;
-		setProject(to);
-	}
-	const goBack = (to) => { props.history.push(to); }
-
-	return (
-		<Routes>
-			<Route path="/work" element={<p>Work</p>} />
-			<Route path="/projects" element={<p>Projects</p>} />
-			<Route path="/research" element={<p>Research</p>} />
-			
-			<Route 
-				exact path="/oneplace"
-				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
-			/>
-			<Route 
-				exact path="/tucanfitness"
-				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{tucanfitness.content}</PortfolioDisplay>}
-			/>
-
-			<Route path="/" element={<PortfolioHome />} />
-		</Routes>
-	);
-	*/
-
+// Portfolio - controls the routing
+const Portfolio = () => {
 	return (
 		<>
 		<ScrollToTop />
@@ -66,7 +28,6 @@ const Portfolio = (props) => {
 			<Route path="/research"	element={<PortfolioPage page="Research"><Research /></PortfolioPage>} />
 			<Route path="/work"		element={<PortfolioPage page="Work Experience"><Work /></PortfolioPage>} />
 			<Route path="/projects" element={<PortfolioPage page="Projects"><Projects /></PortfolioPage>} />
-
 			{projects_dict.all.map(p=>{
 				return (
 					<Route 
@@ -75,7 +36,6 @@ const Portfolio = (props) => {
 					/>
 				)
 			})}
-
 			<Route path="/" element={<PortfolioHome />} />
 		</Routes>
 		</>
@@ -83,11 +43,10 @@ const Portfolio = (props) => {
 
 }
 
-const PortfolioHome = (props) => {
-	
+// Controls content on the home page
+const PortfolioHome = () => {
 	const oneplace = projects_dict.work.filter(p=>p.key==="oneplace")[0];
 	const tucanfitness = projects_dict.work.filter(p=>p.key==="tucanfitness")[0];
-
 	return (
 		<>
 			<h1>Portfolio</h1>
@@ -152,12 +111,16 @@ const PortfolioHome = (props) => {
 	);
 }
 
+// Controls what appears on the Research, Work, and Personal Projects pages
 const PortfolioPage = (props) => {
+	const isMobile = useMobile();
+	let backLink = <h6><Link to="/portfolio">&#8678; Back to Portfolio</Link></h6>;
+	if (isMobile) backLink = null;
 	return (
 		<>
 			<div className="PortfolioHeader">
 				<div className="PortfolioHeaderLinks">
-					<h6><Link to="/portfolio">&#8678; Back to Portfolio</Link></h6>
+					{backLink}
 					<div className="PortfolioHeaderOtherLinks">
 						<h6>{props.page==="Research"
 							? <span className="PortfolioCurrentOtherLink">Research</span>
@@ -181,6 +144,7 @@ const PortfolioPage = (props) => {
 	);
 }
 
+// Component for displaying portfolio items in `PortfolioPage`
 const PortfolioItem = (props) => {
 	const data = props.data;
 	const thumbnailStyle = (data.thumbnailStyle != null) ? data.thumbnailStyle : null;
@@ -205,6 +169,7 @@ const PortfolioItem = (props) => {
 	);
 }
 
+// Displays content specific to Research
 const Research = () => {
 	return (
 		<div className="PortfolioItems">
@@ -215,6 +180,7 @@ const Research = () => {
 	);
 }
 
+// Displays content specific to Work
 const Work = () => {
 	return (
 		<>
@@ -229,6 +195,7 @@ const Work = () => {
 	);
 }
 
+// Displays content specific to Projects
 const Projects = () => {
 	return (
 		<>
@@ -251,8 +218,9 @@ const Projects = () => {
 	);
 }
 
-const PortfolioItemContent = (props) => {
-	
+// Displays what appears specifically for each portfolio item itself.
+// Has to receive the header and contents items specifically via `props`.
+const PortfolioItemContent = (props) => {	
 	const { 
 		id,
 		title,
@@ -354,81 +322,7 @@ const PortfolioItemContent = (props) => {
 	);
 }
 
-/*
-const PortfolioPage = (props) => {
-	const history = useNavigate();
-	const isMobile = useMobile();
-
-	const HandleOtherLink = (e) => {
-		if (e.target.value === props.page) return;
-		switch(e.target.value) {
-			case "Work Experience":
-				history.push("/portfolio/work");
-				break;
-			case "Personal Projects":
-				history.push("/portfolio/projects");
-				break;
-			case "Research Papers":
-				history.push("/portfolio/research");
-				break;
-			default:
-				history.push('/portfolio');
-				break;
-		}
-	}
-
-	return (
-		<>
-			<div className="PortfolioHeader">
-				{
-					isMobile 
-						? 
-							(
-								<div className="PortfolioHeaderLinks">
-									<div className="PortfolioHeaderOtherLinks">
-										<h6><i>Navigate to:</i></h6>
-										<select value={props.page} onChange={HandleOtherLink}>
-											<option value="Portfolio">&#8678; Back to Portfolio</option>
-											<option value="Work Experience">Work Experience</option>
-											<option value="Personal Projects">Personal Projects</option>
-											<option value="Research Papers">Research Papers</option>
-										</select>
-									</div>
-								</div>
-							)
-						: 
-							(
-								<div className="PortfolioHeaderLinks">
-									<h6><Link to="/portfolio">&#8678; Back to Portfolio</Link></h6>
-									<div className="PortfolioHeaderOtherLinks">
-										<h6>{
-											props.page==="Work Experience"
-												? <span className="PortfolioCurrentOtherLink">Work</span>
-												: <Link to="/portfolio/work">Work</Link>
-										}</h6>
-										<h6>{
-											props.page==="Personal Projects"
-												? <span className="PortfolioCurrentOtherLink">Personal</span>
-												: <Link to="/portfolio/projects">Personal</Link>
-										}</h6>
-										<h6>{
-											props.page==="Research Papers"
-												? <span className="PortfolioCurrentOtherLink">Research</span>
-												: <Link to="/portfolio/research">Research</Link>
-										}</h6>
-									</div>
-								</div>
-							)
-					}
-				<h2>{props.page}</h2>
-			</div>
-			<Divider space={32} />
-			{props.children}
-		</>
-	);
-}
-*/
-
+// Component just for printing the status of portfolio items
 const PortfolioStatus = (props) => {
 	switch(props.status) {
 		case 'Ongoing':

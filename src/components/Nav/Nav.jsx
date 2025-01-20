@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-//import { useMobile } from '../../hooks';
+
 
 import Profile from'./Profile';
 import NavLink from './NavLink';
+import { useMobile } from '../../hooks';
 
 import {
 	indexIcon,
@@ -11,18 +12,13 @@ import {
 	menu,
 } from '../../assets';
 
-import { 
-	resume,
-	cv
-} from "../../downloads";
-
+import { resume, cv } from "../../downloads";
 import './Nav.css';
 
 const Nav = () => {
-
 	const [ open, setOpen ] = useState(false);
 	const [ location, setLocation ] = useState(window.location.href.split("/")[1]);
-	//const isMobile = useMobile();
+	const isMobile = useMobile();
 
 	const extraClasses = {
 		index:"",

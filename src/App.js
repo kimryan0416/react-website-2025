@@ -1,3 +1,4 @@
+// Packages
 import React from "react";
 import { 
   BrowserRouter as Router,
@@ -5,60 +6,29 @@ import {
   Route,
 } from 'react-router-dom';
 
+// Custom items: Screens, Components, Hooks, and CSS
+import { Home, Portfolio } from "./screens";
 import { Nav, ScrollToTop } from "./components";
-import {
-  Home,
-  Portfolio,
-} from "./screens";
-
-import {
-  useMobile,
-} from './hooks';
-
+import { useMobile } from './hooks';
 import './App.css';
 
+// App declaration. SEPARATE FROM index.js, where MobileProvider is.
 const App = () => {
-  
   const isMobile = useMobile();
-  /*
   return (
-    <div className={(isMobile)?"App Mobile":"App"}>
-      <Nav />
-      <main>
-        <Routes>
-          <Route 
-            path="/portfolio" 
-            element={<Portfolio />} 
-          />
-          <Route 
-            path="/blog"
-            element={<Blog />}
-          />
-          <Route 
-            path="/" 
-            element={<Home />} 
-          />
-          
-        </Routes>
-      </main>
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className={(isMobile)?"App Mobile":"App"}>
+        <Nav />
+        <main>
+          <Routes>
+            <Route  path="/portfolio/*"  element={<Portfolio />}  />
+            <Route  path="/"  element={<Home />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
-  */
- return (
-  <Router>
-    <ScrollToTop />
-    <div className={(isMobile)?"App Mobile":"App"}>
-      <Nav />
-      <main>
-        <Routes>
-          <Route  path="/portfolio/*"  element={<Portfolio />}  />
-          <Route  path="/"  element={<Home />} />
-        </Routes>
-      </main>
-    </div>
-  </Router>
- );
 }
-
 
 export default App;
