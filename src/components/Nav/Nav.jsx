@@ -17,7 +17,7 @@ import './Nav.css';
 
 const Nav = () => {
 	const [ open, setOpen ] = useState(false);
-	const [ location, setLocation ] = useState(window.location.href.split("/")[1]);
+	const [ location, setLocation ] = useState(window.location.href.split("#")[1].split("/")[1]);
 	const isMobile = useMobile();
 
 	const extraClasses = {
