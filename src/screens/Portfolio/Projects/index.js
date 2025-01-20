@@ -12,6 +12,14 @@ import MoLData from "./MoL/MoL";
 import OrbitData from "./Orbit/Orbit";
 
 import EmbarkmentData from "./Embarkment/Embarkment";
+import TriHopData from "./TriHop/TriHop";
+import HorrorHospitalData from "./HorrorHospital/HorrorHospital";
+import BulletSpaceData from "./BulletSpace/BulletSpace";
+import CyberPursuitData from "./CyberPursuit/CyberPursuit";
+import InkyEscapeData from "./InkyEscape/InkyEscape";
+import OrientationData from "./Orientation/Orientation";
+import TravelerData from "./Traveler/Traveler";
+
 import TosteData from "./Toste/Toste";
 import SMPData from "./SMP/SMP";
 
@@ -51,6 +59,13 @@ const projects = {
 			description:<p>I've worked on one game so far, but I plan to add more to the list in due time.</p>,
 			items:[
 				EmbarkmentData,
+				TriHopData,
+				HorrorHospitalData,
+				BulletSpaceData,
+				CyberPursuitData,
+				InkyEscapeData,
+				OrientationData,
+				TravelerData,
 			]
 		},
 		{
@@ -83,21 +98,28 @@ const projects = {
 		ServiceSearchData,
 	],
 	all:[
+		BulletSpaceData,
 		CSGY6613Project,
+		CyberPursuitData,
 		ECornellData,
 		EasierVRAssetsData,
 		EasierXRAssetsData,
 		EmbarkmentData,
+		HorrorHospitalData,
 		ICHDData,
+		InkyEscapeData,
 		LivestreamsData,
 		MoLData,
 		MIMOData,
 		OnePlaceData,
 		OrbitData,
+		OrientationData,
 		PentatonicData,
 		SMPData,
 		ServiceSearchData,
 		TosteData,
+		TravelerData,
+		TriHopData,
 		TucanFitnessData,
 		UMichInternData,
 		VRKeyboardData,
