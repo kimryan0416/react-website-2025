@@ -1,40 +1,44 @@
-import UMichInternData from "./UMichIntern/UMichIntern";
+// === WORK ====
 import MIMOData from "./MIMO/MIMO";
+import UMichInternData from "./UMichIntern/UMichIntern";
 import TucanFitnessData from "./TucanFitness/TucanFitness";
 import OnePlaceData from "./OnePlace/OnePlace";
 import ECornellData from "./ECornell/ECornell";
 import ICHDData from "./ICHD/ICHD"
 
-import VRKeyboardData from "./vrKeyboard/vrKeyboard";
+// === VR and Web Projects ===
 import EasierVRAssetsData from "./EasierVRAssets/EasierVRAssets";
-import EasierXRAssetsData from "./EasierXRAssets/EasierXRAssets";
-import MoLData from "./MoL/MoL";
+//import EasierXRAssetsData from "./EasierXRAssets/EasierXRAssets";
+import CSGY6613Project from "./CSGY6613Project/csgy6613project";
 import OrbitData from "./Orbit/Orbit";
-
-import EmbarkmentData from "./Embarkment/Embarkment";
-import TriHopData from "./TriHop/TriHop";
-import HorrorHospitalData from "./HorrorHospital/HorrorHospital";
-import BulletSpaceData from "./BulletSpace/BulletSpace";
-import CyberPursuitData from "./CyberPursuit/CyberPursuit";
-import InkyEscapeData from "./InkyEscape/InkyEscape";
-import OrientationData from "./Orientation/Orientation";
-import TravelerData from "./Traveler/Traveler";
-
 import TosteData from "./Toste/Toste";
 import SMPData from "./SMP/SMP";
 
+// === Games ===
+import TravelerData from "./Traveler/Traveler";
+import OrientationData from "./Orientation/Orientation";
+import InkyEscapeData from "./InkyEscape/InkyEscape";
+import CyberPursuitData from "./CyberPursuit/CyberPursuit";
+import BulletSpaceData from "./BulletSpace/BulletSpace";
+import HorrorHospitalData from "./HorrorHospital/HorrorHospital";
+import TriHopData from "./TriHop/TriHop";
+import EmbarkmentData from "./Embarkment/Embarkment";
+
+// === Hardware ===
 import PentatonicData from "./Pentatonic/Pentatonic";
 
+// === Research ===
+import StreetGazeEEGData from "./StreetSimGazeEEG/StreetGazeEEG";
+import BoundarySPHData from "./BoundarySPH/BoundarySPH";
+import MovementEEGData from "./MovementEEG/MovementEEG";
+import VerisimilitudeData from "./Verisimilitude/Verisimilitude";
+import MoLData from "./MoL/MoL";
+import VRKeyboardData from "./vrKeyboard/vrKeyboard";
 import LivestreamsData from "./Livestreams/Livestreams";
 import ServiceSearchData from "./ServiceSearch/ServiceSearch";
 
-import VerisimilitudeData from "./Verisimilitude/Verisimilitude";
-
-import CSGY6613Project from "./CSGY6613Project/csgy6613project";
-
 const projects = {
 	work:[
-		VerisimilitudeData,
 		MIMOData,
 		UMichInternData,
 		TucanFitnessData,
@@ -44,79 +48,85 @@ const projects = {
 	],
 	projects:[
 		{
-			type:"Virtual Reality Research and Projects",
-			description:<p>Projects concerning Virtual Reality. These projects are operated within the <a href="https://www.oculus.com/quest/" target="_blank" rel="noopener noreferrer">Oculus Quest</a> and programmed in C#/C Sharp with <a href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity</a>.</p>,
+			type:"Virtual Reality and Web Projects",
+			description:<p>Projects concerning Virtual Reality, HTML, CSS, JavaScript, PHP, and SQL. VR projects are conducted with <a href="https://www.oculus.com/quest/" target="_blank" rel="noopener noreferrer">Meta Quest platforms</a> and programmed in C#/C Sharp with <a href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity3D</a>.</p>,
 			items:[
 				EasierVRAssetsData,
-				EasierXRAssetsData,
-				MoLData,
-				VRKeyboardData,
+				//EasierXRAssetsData,
+				CSGY6613Project,
 				OrbitData,
+				TosteData,
+				SMPData,
 			],
 		},
 		{
 			type:"Games",
-			description:<p>I've worked on one game so far, but I plan to add more to the list in due time.</p>,
+			description:<p>I've worked on one game so far. "Embarkment" was written with Java. All other projects were created in <a href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity2D/3D</a> and distributed on <a href="https://rk2546.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>.</p>,
 			items:[
-				EmbarkmentData,
-				TriHopData,
-				HorrorHospitalData,
-				BulletSpaceData,
-				CyberPursuitData,
-				InkyEscapeData,
-				OrientationData,
 				TravelerData,
+				OrientationData,
+				InkyEscapeData,
+				CyberPursuitData,
+				BulletSpaceData,
+				HorrorHospitalData,
+				TriHopData,
+				EmbarkmentData,
 			]
 		},
+		/*
 		{
 			type:"Web Projects",
 			description:<p>As someone who has worked extensively with web programming, I have worked on various projects ranging from browser web apps to JavaScript programs. Work experience and skillset includes HTML, CSS, JavaScript, PHP, SQL, and Python.</p>,
 			items:[
 				CSGY6613Project,
-				TucanFitnessData,
-				OnePlaceData,
 				SMPData,
 				TosteData,
-				ECornellData,
 				ICHDData,
 			]
 		},
+		*/
 		{
 			type:"Hardware",
-			description:<p>I've also had the opportunity to work with hardware and electronics. While I only have a college course's worth of knowledge, I understand the fundamentals behind electronics and C.</p>,
+			//description:<p>I've also had the opportunity to work with hardware and electronics. While I only have a college course's worth of knowledge, I understand the fundamentals behind electronics and C.</p>,
+			description:null,
 			items:[
 				PentatonicData,
 			]
 		}
 	],
 	research:[
+		StreetGazeEEGData,
+		//MovementEEG,
+		BoundarySPHData,
 		VerisimilitudeData,
-		UMichInternData,
 		MoLData,
 		VRKeyboardData,
 		LivestreamsData,
 		ServiceSearchData,
 	],
 	all:[
+		BoundarySPHData,
 		BulletSpaceData,
 		CSGY6613Project,
 		CyberPursuitData,
 		ECornellData,
 		EasierVRAssetsData,
-		EasierXRAssetsData,
+		//EasierXRAssetsData,
 		EmbarkmentData,
 		HorrorHospitalData,
 		ICHDData,
 		InkyEscapeData,
-		LivestreamsData,
+		LivestreamsData, 
 		MoLData,
 		MIMOData,
+		//MovementEEG,
 		OnePlaceData,
 		OrbitData,
 		OrientationData,
 		PentatonicData,
 		SMPData,
 		ServiceSearchData,
+		StreetGazeEEGData,
 		TosteData,
 		TravelerData,
 		TriHopData,

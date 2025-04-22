@@ -59,8 +59,8 @@ const PortfolioHome = () => {
 				<div className="PortfolioPages">
 					<div className="PortfolioPageLink">
 						<Link to="/portfolio/research">
-							<h3>Research Papers</h3>
-							<p className="h7">Research papers I've previously written during my degree programs. Two involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong>.</p>
+							<h3>Research</h3>
+							<p className="h7">Research papers or reports I've previously written during my degree programs. Three involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong>.</p>
 							<p className="h7 a">- Click here if you're interested in my research experience.</p>
 						</Link>
 					</div>
