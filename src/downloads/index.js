@@ -1,5 +1,5 @@
-import resume from "./RyanKim-Resume-04.2025.pdf";
-import cv from "./RyanKim-CV-04.2025.pdf";
+import resume from "./RyanKim-Resume-10.2025.pdf";
+import cv from "./RyanKim-CV-10.2025.pdf";
 import imol from "./iMoL-ir01.pdf";
 import vrkeyboard from "./VRKeyboard.pdf";
 import pentatonic from "./AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerReport.pdf"

@@ -58,11 +58,11 @@ const Nav = () => {
 						</NavLink>
 						<NavLink to={resume} cName='DownloadLink' desc="Download my Resume in PDF form." useA={true}>
 							<img src={downloadIcon} alt="" className="NavIcon" />
-							<span>Resume <span className="h8">(109 kB)</span></span>
+							<span>Resume <span className="h8">(108 kB)</span></span>
 						</NavLink>
 						<NavLink to={cv} cName='DownloadLink' desc="Download my CV in PDF form." useA={true}>
 							<img src={downloadIcon} alt="" className="NavIcon" />
-							<span>CV <span className="h8">(121 kB)</span></span>
+							<span>CV <span className="h8">(122 kB)</span></span>
 						</NavLink>
 					</div>
 				</div>
