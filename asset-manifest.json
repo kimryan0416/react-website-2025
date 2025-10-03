@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ec9d6b0b.css",
-    "main.js": "/static/js/main.d92d2004.js",
+    "main.js": "/static/js/main.8b213845.js",
     "static/js/488.7a876c9d.chunk.js": "/static/js/488.7a876c9d.chunk.js",
     "static/media/algorithms-boundarysph.pdf": "/static/media/algorithms-boundarysph.324c5baa90c004ea7aca.pdf",
     "static/media/Siggraph2023_PrePrint.pdf": "/static/media/Siggraph2023_PrePrint.c191e368fe54fa636458.pdf",
@@ -39,12 +39,12 @@
     "static/media/taskDelegation.jpg": "/static/media/taskDelegation.f7d0a86951c995596349.jpg",
     "static/media/v0.1.png": "/static/media/v0.1.679ae8802ecb8acdeda8.png",
     "static/media/button_mapping.png": "/static/media/button_mapping.cfc32d25f4baf7e5c06d.png",
-    "static/media/RyanKim-CV-04.2025.pdf": "/static/media/RyanKim-CV-04.2025.5142200bf10054f9a696.pdf",
+    "static/media/RyanKim-CV-10.2025.pdf": "/static/media/RyanKim-CV-10.2025.c1ee68f510c7c7054b47.pdf",
     "static/media/richPicture.png": "/static/media/richPicture.e03089f3593dc0efa023.png",
     "static/media/highFidelityWireframe3.png": "/static/media/highFidelityWireframe3.5c93b92d45252ed8b188.png",
     "static/media/newerSketches.jpg": "/static/media/newerSketches.53b620db5ae252dcfae1.jpg",
-    "static/media/RyanKim-Resume-04.2025.pdf": "/static/media/RyanKim-Resume-04.2025.e6da086bfa5169f86491.pdf",
     "static/media/v0.2.png": "/static/media/v0.2.94faf1b1976423f5ad3b.png",
+    "static/media/RyanKim-Resume-10.2025.pdf": "/static/media/RyanKim-Resume-10.2025.2641c2fc005e292a74eb.pdf",
     "static/media/v1.0.png": "/static/media/v1.0.e6de54d6eac971923167.png",
     "static/media/productPreview.png": "/static/media/productPreview.9935be0a72a21cfb348d.png",
     "static/media/groupSketches.jpg": "/static/media/groupSketches.4befd4d4b6ca1e3975c5.jpg",
@@ -91,11 +91,11 @@
     "static/media/indexIcon.svg": "/static/media/indexIcon.499da9304a8196f4a7dca143c226af9c.svg",
     "static/media/pythonIcon.svg": "/static/media/pythonIcon.a7c436806ad16fb69c473ccc3e22e66f.svg",
     "main.ec9d6b0b.css.map": "/static/css/main.ec9d6b0b.css.map",
-    "main.d92d2004.js.map": "/static/js/main.d92d2004.js.map",
+    "main.8b213845.js.map": "/static/js/main.8b213845.js.map",
     "488.7a876c9d.chunk.js.map": "/static/js/488.7a876c9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec9d6b0b.css",
-    "static/js/main.d92d2004.js"
+    "static/js/main.8b213845.js"
   ]
 }
